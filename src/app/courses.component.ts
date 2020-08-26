@@ -67,6 +67,7 @@ import {CoursesService} from './courses.service';
     </table>
     <div (click)="onDivClick($event)">
     <button (click)="onSave($event)"[style.backgroundColor]= "isActive ? 'blue' : 'red' "class = "btn btn-primary" [class.active]="isActive">Save</button>
+    <input (keyup.enter)="onKeyUp()" />
     </div>
     `
 })
@@ -83,6 +84,9 @@ export class CoursesComponent {
   onDivClick($event){
 
     console.log('div button was clicked', $event);
+  }
+  onKeyUp(){
+    console.log("Enter was pressed");
   }
   // courses;
 // instead of creating an object of CourseService we pass it as dependency
