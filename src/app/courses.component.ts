@@ -45,6 +45,19 @@ import {CoursesService} from './courses.service';
 //Also I want to clarify that I separated this class binding from the actual class attribute because I
 //want to keep these two classes btn and btn-primary seperate at all times
 //I only want to add the active class dynamically based on some condition.
+  //We also have style binding which is again a variation of property binding very similar to class binding.
+//So back to our example if I want to apply some inline styles to this ban based on some condition I can
+//type something like this.
+//So we start with the square brackets now type style and then we can add any properties of this style
+//object in done.
+//For example we've got background color now for the complete list of all the properties in this style
+//object.
+//You can simply search for Dom style object properties.
+//If you scroll down here the first link it's DML Darmstadt object on W3 schools and this page and this
+//table you can see all the properties available in the style object like we set this to an expression.
+//So if is active is true we want the background color to be blue and not that here I'm putting blue between
+//single quotes otherwise I want the background color to be white.
+//So this is what we call style binding.
   template: `
     <img [src]="imageUrl"/>
     <table>
@@ -52,7 +65,7 @@ import {CoursesService} from './courses.service';
         <td [attr.colspan] = "colSpan"></td>
       </tr>
     </table>
-    <button class = "btn btn-primary" [class.active]="isActive">Save</button>
+    <button [style.backgroundColor]= "isActive ? 'blue' : 'red' "class = "btn btn-primary" [class.active]="isActive">Save</button>
     `
 })
 export class CoursesComponent {
